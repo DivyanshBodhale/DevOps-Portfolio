@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Divyansh Bodhale — DevOps Engineer portfolio. Linux, AWS, Docker, Kubernetes, Terraform, CI/CD, GitHub Actions, Jenkins and observability." />
+  <title>Divyansh Bodhale | DevOps Engineer</title>
+  <style>
+    :root{
+      --bg:#07111f; --panel:#0d1a2b; --panel2:#101f33; --text:#e8f0fa;
+      --muted:#91a4bb; --accent:#63e6be; --accent2:#74c0fc; --line:#1d3048;
+      --shadow:0 18px 50px rgba(0,0,0,.28); --radius:22px;
+    }
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+      radial-gradient(circle at 80% 10%,rgba(116,192,252,.12),transparent 28%),
+      radial-gradient(circle at 10% 25%,rgba(99,230,190,.08),transparent 25%),var(--bg);color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92%);margin:auto}
+    nav{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;letter-spacing:.5px}.brand span{color:var(--accent)}
+    .nav-links{display:flex;gap:25px;color:var(--muted);font-size:.92rem}
+    .nav-links a:hover{color:var(--text)}
+    .hero{min-height:calc(100vh - 70px);display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center;padding:85px 0}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(13,26,43,.72);color:var(--accent);font-size:.82rem;font-weight:700}
+    .dot{width:7px;height:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 14px var(--accent)}
+    h1{font-size:clamp(3rem,7vw,5.8rem);line-height:.98;letter-spacing:-4px;margin:24px 0 20px}
+    h1 .gradient{background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{max-width:680px;color:var(--muted);font-size:1.1rem}
+    .buttons{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
+    .btn{padding:12px 18px;border-radius:12px;border:1px solid var(--line);font-weight:700;transition:.2s}
+    .btn.primary{background:var(--accent);color:#052018;border-color:var(--accent)}
+    .btn:hover{transform:translateY(-2px)}
+    .terminal{background:#050c15;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .terminal-head{padding:13px 16px;border-bottom:1px solid var(--line);display:flex;gap:7px}
+    .terminal-head i{width:10px;height:10px;border-radius:50%;background:#31445b}
+    .terminal-body{padding:25px;font:14px/2 "SFMono-Regular",Consolas,monospace;color:#a8c1d9}
+    .terminal-body .green{color:var(--accent)} .terminal-body .blue{color:var(--accent2)}
+    section{padding:95px 0}.section-head{margin-bottom:35px}
+    .kicker{color:var(--accent);font:700 .78rem/1 monospace;text-transform:uppercase;letter-spacing:2px}
+    h2{font-size:2.4rem;letter-spacing:-1.5px;margin:10px 0}.lead{color:var(--muted);max-width:720px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(145deg,rgba(16,31,51,.92),rgba(10,23,38,.92));border:1px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:0 10px 35px rgba(0,0,0,.12)}
+    .card h3{margin:8px 0 8px;font-size:1.12rem}.card p{color:var(--muted);font-size:.94rem}
+    .tag{display:inline-block;padding:5px 9px;border-radius:8px;background:#13273d;border:1px solid #203b58;color:#b8d8f5;font-size:.75rem;margin:4px 4px 0 0}
+    .project{position:relative;display:flex;flex-direction:column;min-height:290px}
+    .project .number{font:700 12px monospace;color:var(--accent2)}
+    .project .links{margin-top:auto;padding-top:18px;display:flex;gap:12px}
+    .project .links a{color:var(--accent);font-weight:700;font-size:.88rem}
+    .timeline{display:grid;gap:16px}
+    .timeline-item{display:grid;grid-template-columns:160px 1fr;gap:25px;padding:25px;border:1px solid var(--line);border-radius:18px;background:rgba(13,26,43,.65)}
+    .timeline-item .date{color:var(--accent);font-weight:800}.timeline-item h3{margin:0 0 4px}.timeline-item p{margin:4px 0;color:var(--muted)}
+    .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .skill-box{padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(13,26,43,.55)}
+    .skill-box h3{margin-top:0}.skill-list{display:flex;flex-wrap:wrap;gap:7px}
+    .skill{padding:8px 11px;background:#0a1728;border:1px solid #20364e;border-radius:10px;font-size:.83rem;color:#c6d6e7}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+    .stat{padding:18px;border:1px solid var(--line);border-radius:16px;background:rgba(13,26,43,.55)}.stat strong{font-size:1.7rem;display:block}.stat span{color:var(--muted);font-size:.8rem}
+    .contact{display:grid;grid-template-columns:1fr .8fr;gap:20px}
+    footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .reveal{opacity:0;transform:translateY(16px);transition:.65s ease}.reveal.show{opacity:1;transform:none}
+    @media(max-width:850px){
+      .hero,.about-grid,.contact{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.skills{grid-template-columns:1fr}
+      .nav-links{display:none}h1{letter-spacing:-2px}
+    }
+    @media(max-width:580px){.grid{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:5px}.stats{grid-template-columns:1fr}.hero{padding:55px 0}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#top">Divyansh<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero container">
+    <div class="reveal">
+      <div class="eyebrow"><span class="dot"></span> Open to DevOps / Cloud opportunities</div>
+      <h1>Building reliable<br><span class="gradient">cloud infrastructure.</span></h1>
+      <p>
+        I'm <strong>Divyansh Bodhale</strong>, an Information Technology graduate focused on DevOps and cloud engineering.
+        I enjoy applying DevOps practices and a collaborative engineering mindset to make software delivery faster,
+        more reliable and repeatable. I work across cloud, automation, CI/CD, containers and infrastructure,
+        and I’m always open to learning new tools and technologies.
+      </p>
+      <div class="buttons">
+        <a class="btn primary" href="#projects">Explore my work ↓</a>
+        <a class="btn" href="https://github.com/DivyanshBodhale" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="terminal reveal">
+      <div class="terminal-head"><i></i><i></i><i></i></div>
+      <div class="terminal-body">
+        <div><span class="green"> Who I'm</span></div>
+        <div>I'm Divyansh BOdhale, Looking for opportunities In below</div><br>
+        <div><span class="blue">role</span> → DevOps / Cloud  Related roles</div>
+        <div><span class="blue">focus</span> → DevOps mindset, cloud & automation</div>
+        <div><span class="blue">status</span> → Open to DevOps & Cloud or Related opportunities</div>
+        <div><span class="blue">mindset</span> → Automate • Collaborate • Improve</div>
+        <div><span class="blue">cloud</span> → AWS</div>
+        <div><span class="blue">iac</span> → Terraform</div>
+        <div><span class="blue">containers</span> → Docker / Kubernetes</div>
+        <div><span class="blue">ci/cd</span> → GitHub Actions / Jenkins</div>
+        <div><span class="blue">systems</span> → Linux & Networking</div>
+        <div><span class="blue">Scripting</span> → Shell Scripting </div>
+        <div><span class="blue">mindset</span> → Learn → Automate → Improve</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal"><div class="kicker">01 / About</div><h2>Infrastructure-minded. Automation-focused.</h2></div>
+      <div class="about-grid">
+        <div class="card reveal">
+          <h3>What I bring</h3>
+          <p>
+            A hands-on DevOps approach: understand the development-to-delivery lifecycle, collaborate across technical
+            boundaries, automate repetitive work, make deployments reproducible, and continuously improve the way
+            software is built and operated. My projects cover IaC, CI/CD, containers, security checks, cloud,
+            server scripting and observability.
+          </p>
+          <div class="stats">
+            <div class="stat"><strong>4+</strong><span>DevOps projects</span></div>
+            <div class="stat"><strong>AWS</strong><span>Cloud platform</span></div>
+            <div class="stat"><strong>IaC</strong><span>Terraform workflows</span></div>
+          </div>
+        </div>
+        <div class="card reveal">
+          <h3>Currently building toward</h3>
+          <p>
+            Entry-level DevOps / Cloud Engineering roles where I can work with infrastructure, deployment automation,
+            Linux systems, cloud platforms and production-oriented engineering practices.
+          </p>
+          <p><strong>Engineering principles</strong></p>
+          <span class="tag">Automation first</span><span class="tag">Infrastructure as Code</span>
+          <span class="tag">Repeatable deployments</span><span class="tag">Observability</span><span class="tag">Continuous learning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head reveal"><div class="kicker">02 / Skills</div><h2>My DevOps toolkit.</h2><p class="lead">A practical toolkit spanning DevOps culture and practices, cloud services, CI/CD, containers,
+        infrastructure automation, observability and systems engineering.</p></div>
+      <div class="skills">
+        <div class="skill-box reveal"><h3>☁ AWS & Cloud</h3><div class="skill-list">
+<span class="skill">AWS</span><span class="skill">EC2</span><span class="skill">IAM</span><span class="skill">S3</span>
+<span class="skill">VPC</span><span class="skill">ELB</span><span class="skill">Route 53</span><span class="skill">CloudWatch</span>
+<span class="skill">Terraform</span><span class="skill">Infrastructure as Code</span></div></div>
+        <div class="skill-box reveal"><h3>🔄 DevOps Practices & Automation</h3><div class="skill-list">
+<span class="skill">CI/CD</span><span class="skill">Automation</span><span class="skill">Collaboration</span>
+<span class="skill">Continuous Improvement</span><span class="skill">GitHub Actions</span><span class="skill">Jenkins</span>
+<span class="skill">Bash / Shell</span></div></div>
+        <div class="skill-box reveal"><h3>📦 Containers & Orchestration</h3><div class="skill-list"><span class="skill">Docker</span><span class="skill">Kubernetes (Basic)</span><span class="skill">Containerization</span></div></div>
+        <div class="skill-box reveal"><h3>🖥 Systems & Networking</h3><div class="skill-list"><span class="skill">Linux</span><span class="skill">Shell Scripting</span><span class="skill">Networking</span><span class="skill">System Troubleshooting</span></div></div>
+        <div class="skill-box reveal"><h3>🔎 Observability</h3><div class="skill-list"><span class="skill">Monitoring</span><span class="skill">Logs</span><span class="skill">Metrics</span><span class="skill">Observability concepts</span></div></div>
+        <div class="skill-box reveal"><h3>🔧 Version Control</h3><div class="skill-list"><span class="skill">Git</span><span class="skill">GitHub</span><span class="skill">Branching & Collaboration</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head reveal"><div class="kicker">03 / Selected Work</div><h2>Projects that show how I think.</h2><p class="lead">Real repositories demonstrating infrastructure automation, CI/CD, security, observability and Linux scripting.</p></div>
+      <div class="grid">
+        <article class="card project reveal">
+          <div class="number">01 — CLOUD / CI/CD</div><h3>CloudForge</h3>
+          <p>End-to-end DevOps pipeline using Terraform, GitHub Actions, Docker and AWS. Includes automated build/deploy workflows plus code, secret, dependency and container security checks.</p>
+          <div><span class="tag">Terraform</span><span class="tag">AWS</span><span class="tag">GitHub Actions</span><span class="tag">Docker</span></div>
+          <div class="links"><a href="https://github.com/DivyanshBodhale/CloudForge-Terraform-GitHub-CICD-Pipeline" target="_blank">View repository ↗</a></div>
+        </article>
+        <article class="card project reveal">
+          <div class="number">02 — DEVOPS</div><h3>Wanderlust DevOps</h3>
+          <p>A DevOps-focused application project included in my portfolio work. The repository link below is kept as the source of truth for the implementation and deployment setup.</p>
+          <div><span class="tag">DevOps</span><span class="tag">Deployment</span><span class="tag">Git</span></div>
+          <div class="links"><a href="https://github.com/DivyanshBodhale/Wanderlust-DevOps-.git" target="_blank">View repository ↗</a></div>
+        </article>
+        <article class="card project reveal">
+          <div class="number">03 — OBSERVABILITY</div><h3>Observability</h3>
+          <p>Hands-on work around making systems easier to monitor and understand, reflecting my interest in logs, metrics and operational visibility.</p>
+          <div><span class="tag">Observability</span><span class="tag">Monitoring</span><span class="tag">Operations</span></div>
+          <div class="links"><a href="https://github.com/DivyanshBodhale/Observability-.git" target="_blank">View repository ↗</a></div>
+        </article>
+        <article class="card project reveal">
+          <div class="number">04 — LINUX / BASH</div><h3>Scripting Projects</h3>
+          <p>Practical Bash automation including a Linux server health check for CPU, memory, disk, uptime, connectivity and services, plus automated compressed backups with retention cleanup.</p>
+          <div><span class="tag">Linux</span><span class="tag">Bash</span><span class="tag">Automation</span></div>
+          <div class="links"><a href="https://github.com/DivyanshBodhale/Scripting-Projects" target="_blank">View repository ↗</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head reveal"><div class="kicker">04 / Experience</div><h2>Where I've learned by doing.</h2></div>
+      <div class="timeline">
+        <div class="timeline-item reveal"><div class="date">Dec 2025 – May 2026</div><div>
+          <h3>DevOps Intern — Pixelstat eSolutions Development Pvt. Ltd.</h3>
+          <p>• Supported cloud infrastructure automation and AWS provisioning under senior engineering guidance.</p>
+          <p>• Assisted with CI/CD pipeline design and maintenance using GitHub Actions and Jenkins.</p>
+          <p>• Gained hands-on experience with Terraform and Infrastructure as Code, along with Docker, Linux and deployment troubleshooting.</p>
+          <p>• Worked with monitoring and observability tooling including Prometheus and Grafana.</p>
+        </div></div>
+        <div class="timeline-item reveal"><div class="date">Internship</div><div>
+          <h3>Intern — Infosys Springboard</h3>
+          <p>• Worked on backend workflow analysis and software-development tasks in an industry-oriented learning environment.</p>
+          <p>• Gained practical exposure to Java and REST API development concepts.</p>
+          <p>• Strengthened problem-solving, collaboration and software engineering fundamentals through hands-on work.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-head reveal"><div class="kicker">05 / Education</div><h2>Academic foundation.</h2></div>
+      <div class="card reveal">
+        <h3>B.Tech — Information Technology</h3>
+        <p><strong>G H Raisoni College of Engineering, Nagpur</strong></p>
+        <p>2022 – 2026 · CGPA: <strong>7.43</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact">
+        <div class="card reveal">
+          <div class="kicker">06 / Contact</div><h2>Let's build something reliable.</h2>
+          <p class="lead">I'm interested in entry-level DevOps, Cloud and infrastructure opportunities. Feel free to explore my work and connect with me.</p>
+          <div class="buttons"><a class="btn primary" href="https://github.com/DivyanshBodhale" target="_blank">GitHub ↗</a>
+              <a class="btn primary" href="https://github.com/DivyanshBodhale" target="_blank"> Resume ↗</a></div>
+        </div>
+        <div class="card reveal">
+          <h3>Let's connect</h3>
+          <h3>I’m always open to connecting with recruiters, hiring managers, and fellow engineers. You can reach me through the channels below. </h3>
+          <p><strong>Phone</strong><br><a href="tel:+919322072139">+91 9322072139</a></p>
+          <p><strong>Email</strong><br><a href="mailto:divyanshbodhale@gmail.com">divyanshbodhale@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Divyansh Bodhale. Built with HTML, CSS & JavaScript.</span>
+    <span><a href="mailto:divyanshbodhale@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/divyansh-bodhale-5958b4257/" target="_blank">LinkedIn</a> · <a href="https://github.com/DivyanshBodhale" target="_blank">GitHub</a> · +91 9322072139</span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+  }, {threshold: .08});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
